@@ -3,6 +3,16 @@ html, body{
     padding: 0;
     margin: 0;
 }
+/* Chỉnh kích thước zoom 150% khi width lớn hơn 200px */
+@media screen and (min-width: 200px) {
+    body {
+      /* webkit browsers */
+      zoom: 130%;
+      /* moz browsers , since there is no support to "zoom" */
+      /* -moz-transform: scale(1.2);
+      -moz-transform-origin: 0 0 */
+    }
+  }
 /*---------------Background-------------------*/
 main{
     padding: 0;
