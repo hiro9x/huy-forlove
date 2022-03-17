@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Dice</title>
+    <style>
+        .container {
+            perspective: 600px;
+            margin: 100px;
+        }
+
+        .dice {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: xoaytron 3s linear infinite;
+            /*ani tự xoay sau 3s*/
+            transform-style: preserve-3d;
+            /* to tranform with 3d effect */
+        }
+
+        .dice:hover {
+            /*animation-play-state: paused;               /*dừng chuyển động ani*/
+            animation: xoaynghieng 3s linear infinite;
+            /*ani tự xoay sau 3s*/
+            /* transform-origin: 60px 60px 0; */        /*dịch chuyển khỏi vị trí*/
+        }
+
+        .face {
+            width: 100px;
+            height: 100px;
+            border: solid 1px black;
+            /* backface-visibility: hidden;   /*giấu mặt sau*/
+            position: absolute;
+            opacity: 0.6;
+            /*hạ màu sắc tạo độ trong suốt*/
+        }
+
+        .front {
+            background-color: tomato;
+            transform: translateZ(50px);
+            /*dịch chuyển ra hướng trước mặt (trục Z)*/
+        }
+
+        .back {
+            background-color: lavender;
+            transform: rotateY(180deg) translateZ(50px);
+            /*xoay 180 độ và dịch ra đằng trước*/
+        }
+
+        .left {
+            background-color: olive;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .right {
+            background-color: lightgreen;
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .top {
+            background-color: wheat;
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .bottom {
+            background-color: cornflowerblue;
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        @keyframes xoaytron {
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        @keyframes xoaynghieng {
+            100% {
+                /* transform: rotateX(360deg) rotateY(90deg); */
+                /* transform: rotate3d(1, 1, 1, 360deg); */
+                transform: rotate3d(2, -1, -1, -1turn);     /*rotate3d(x, y, z, a)*/
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dice">
+            <div class="face front">front</div>
+            <div class="face back">back</div>
+            <div class="face top">top</div>
+            <div class="face bottom">bottom</div>
+            <div class="face left">left</div>
+            <div class="face right">right</div>
+        </div>
+    </div>
+</body>
+
+</html>
