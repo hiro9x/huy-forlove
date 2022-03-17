@@ -1,0 +1,251 @@
+html, body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+/*---------------Background-------------------*/
+main{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.background1{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    background-image: url("media/heart_gift_4.gif");
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+     opacity: 0.5;
+}
+.container {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0px 0px 0px 0px; 
+    padding: 0px 0px 0px 0px; 
+    object-fit: cover;
+}
+/*---------------Box-------------------*/
+.allDice{
+    right: 200px;
+    top: 150px;
+    perspective: 600px;
+    /* margin: 0px auto;  */
+    position: absolute;
+}
+.dice{
+    margin: 0 0 0 0;
+    position: relative;
+    animation: xoaynghieng-in 5s linear infinite;
+    /*ani tự xoay sau 3s*/
+    transform-style: preserve-3d;
+    /* to tranform with 3d effect */
+    animation-duration: 5s;
+    /*tốc độ chuyển động*/
+}
+.min, .max{
+    width: 100px;
+    height: 100px; 
+}
+.allDice:hover .max .face{
+    opacity: 0.6;
+    width: 300px;
+    height: 300px;
+}
+.min .face {
+    width: 100px;
+    height: 100px;
+    backface-visibility: hidden;   /*giấu mặt sau*/
+    position: absolute;
+    /* opacity: 0.6; */
+    /*hạ màu sắc tạo độ trong suốt*/
+}
+.max .face {
+    width: 200px;
+    height: 200px;
+    /* backface-visibility: hidden;   /*giấu mặt sau*/
+    position: absolute;
+    opacity: 0.1;
+    /*hạ màu sắc tạo độ trong suốt*/
+}
+/*---------------Box front-------------------*/
+.min .front {
+    background-color: tomato;
+    transform: translateZ(50px);
+    /*dịch chuyển ra hướng trước mặt (trục Z)*/
+}
+.max .front {
+    background-color: tomato;
+    transform: translateZ(100px) translateX(-50px) translateY(-50px);
+    /*dịch chuyển ra các hướng (trục X,Y,Z)*/
+    transition-duration: 1s;
+}
+.allDice:hover .max .front{
+    transform: translateZ(300px) translateX(-50px) translateY(-50px);
+}
+/*---------------Box behind-------------------*/
+.min .back {
+    background-color: lavender;
+    transform: rotateY(180deg) translateZ(50px);
+    /*xoay 180 độ và dịch ra các hướng*/
+}
+.max .back {
+    background-color: lavender;
+    transform: rotateY(180deg) translateZ(100px) translateX(50px) translateY(-50px);
+    /*xoay 180 độ và dịch ra các hướng*/
+    transition-duration: 1s;
+}
+.allDice:hover .max .back{
+    transform: rotateY(180deg) translateZ(300px) translateX(50px) translateY(-50px);
+}
+/*---------------Box left-------------------*/
+.min .left {
+    background-color: olive;
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.max .left {
+    background-color: olive;
+    transform: rotateY(-90deg) translateZ(150px) translateX(0) translateY(-50px);
+    transition-duration: 1s;
+}
+.allDice:hover .max .left{
+    transform: rotateY(-90deg) translateZ(350px) translateX(0) translateY(-50px);
+}
+/*---------------Box right-------------------*/
+.min .right {
+    background-color: lightgreen;
+    transform: rotateY(90deg) translateZ(50px);
+}
+.max .right {
+    background-color: lightgreen;
+    transform: rotateY(90deg) translateZ(50px) translateX(0) translateY(-50px);
+    transition-duration: 1s;
+}
+.allDice:hover .max .right{
+    transform: rotateY(90deg) translateZ(150px) translateX(0) translateY(-50px);
+}
+/*---------------Box top-------------------*/
+.min .top {
+    background-color: wheat;
+    transform: rotateX(90deg) translateZ(50px);
+}
+.max .top {
+    background-color: wheat;
+    transform: rotateX(90deg) translateZ(150px) translateX(-50px) translateY(0);
+    transition-duration: 1s;
+}
+.allDice:hover .max .top{
+    transform: rotateX(90deg) translateZ(350px) translateX(-50px) translateY(0);
+}
+/*---------------Box bottom-------------------*/
+.min .bottom {
+    background-color: cornflowerblue;
+    transform: rotateX(-90deg) translateZ(50px);
+}
+.max .bottom {
+    background-color: cornflowerblue;
+    transform: rotateX(-90deg) translateZ(50px) translateX(-50px) translateY(0);
+    transition-duration: 1s;
+}
+.allDice:hover .max .bottom{
+    transform: rotateX(-90deg) translateZ(150px) translateX(-50px) translateY(0);
+}
+/*---------------Animation Box-------------------*/
+@keyframes xoaytron {
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+@keyframes xoaynghieng-in{
+    100%{
+        transform: rotate3d(0, 1, 0.3, 360deg);
+    }
+}
+/*---------------------Card-----------------------*/
+.allCard{
+    position: relative;
+    /* border: solid 1px black; */
+    top: 420px;
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    perspective: 600px;
+}
+.maxCard{
+    position: absolute;
+    margin: 0 auto;
+    width: 100px;
+    height: 150px;
+    transform: rotateX(70deg);
+    transition-duration: 1s;
+    box-shadow: 0px 20px 50px #555;
+    transform-style: preserve-3d;
+}
+.maxCard:hover{
+    cursor: pointer;
+    transform: rotateY(0deg) scale(1.5) translateY(-30px);
+    box-shadow: 0px 10px 10px #555;
+}
+.maxCard:nth-child(1){
+    right: 80%;
+}
+.maxCard:nth-child(3){
+    left: 80%;
+}
+.miniCard{
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.C2{
+    transform: rotateY(180deg);
+    position: relative;
+}
+.content{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 10.5px;
+    font-style: oblique;
+    font-family: Papyrus;
+    z-index: 100;
+    color: darkcyan;
+}
+span{
+    position: absolute;
+    font-size: large;
+    color: red ;
+    top: 110px;
+    left: 25px;
+}
+.miniCard img{
+    object-fit: cover;
+}
+.maxCard:active{
+    transform: rotateY(180deg) scale(1.5) translateY(-30px);
+}
+/*---------------------Content-----------------------*/
+.aside{
+    background-color: aqua;
+    width: 0px;
+    height: auto;
+}
+
