@@ -1,4 +1,4 @@
-var box_img = "https://i.imgur.com/Pna6fEO.gif";
+var box_img = "https://www.funimada.com/assets/images/cards/big/love-22.gif";
 var box_bt_img = "https://cdn.dribbble.com/users/23582/screenshots/3319553/paper_clip_love.gif"
 
 document.getElementById("card_img_C1").src = "https://acegif.com/wp-content/uploads/gif-i-love-you-45.gif";
