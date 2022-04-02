@@ -1,8 +1,8 @@
-var box_img = "https://i.imgur.com/0TPGPey.gif";
-var box_bt_img = "https://i.imgur.com/qXqM2nY.gif"
+var box_img = "https://i.imgur.com/Vcb1LLy.png";
+var box_bt_img = "https://i.imgur.com/Vcb1LLy.png"
 
 document.getElementById("card_img_C1").src = "https://i.imgur.com/vQN9X8L.gif";
-document.getElementById("card_img_C2").src = "https://i.imgur.com/FxgTC19.gif";
+document.getElementById("card_img_C2").src = "https://i.imgur.com/qXqM2nY.gif";
 document.getElementById("card_img_C3").src = "https://i.imgur.com/Rd8PNzs.gif";
 
 //Set src Image for box
