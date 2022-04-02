@@ -1,9 +1,9 @@
-var box_img = "https://www.funimada.com/assets/images/cards/big/love-22.gif";
-var box_bt_img = "https://cdn.dribbble.com/users/23582/screenshots/3319553/paper_clip_love.gif"
+var box_img = "https://i.imgur.com/0TPGPey.gif";
+var box_bt_img = "https://i.imgur.com/qXqM2nY.gif"
 
-document.getElementById("card_img_C1").src = "https://acegif.com/wp-content/uploads/gif-i-love-you-45.gif";
-document.getElementById("card_img_C2").src = "https://i.imgur.com/qXqM2nY.gif";
-document.getElementById("card_img_C3").src = "https://www.funimada.com/assets/images/cards/big/love-19.gif";
+document.getElementById("card_img_C1").src = "https://i.imgur.com/vQN9X8L.gif";
+document.getElementById("card_img_C2").src = "https://i.imgur.com/FxgTC19.gif";
+document.getElementById("card_img_C3").src = "https://i.imgur.com/Rd8PNzs.gif";
 
 //Set src Image for box
 function Img_loop(x, a) {
