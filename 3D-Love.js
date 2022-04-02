@@ -1,7 +1,10 @@
-var box_img = "https://imgur.com/Vcb1LLy";
-document.getElementById("card_img_C1").src = "https://imgur.com/qXqM2nY";
-document.getElementById("card_img_C2").src = "https://imgur.com/W6Q9JP1";
-document.getElementById("card_img_C3").src = "https://imgur.com/Pna6fEO";
+var box_img = "https://i.imgur.com/Pna6fEO.gif";
+var box_bt_img = "https://cdn.dribbble.com/users/23582/screenshots/3319553/paper_clip_love.gif"
+
+document.getElementById("card_img_C1").src = "https://acegif.com/wp-content/uploads/gif-i-love-you-45.gif";
+document.getElementById("card_img_C2").src = "https://i.imgur.com/qXqM2nY.gif";
+document.getElementById("card_img_C3").src = "https://www.funimada.com/assets/images/cards/big/love-19.gif";
+
 //Set src Image for box
 function Img_loop(x, a) {
     for (let i = 0; i < x.length; i++) {
@@ -12,6 +15,10 @@ function Img_loop(x, a) {
 function auto_Img() {
     var x = document.getElementsByTagName("img");
     Img_loop(x, box_img)
+    var y = document.getElementsByClassName("bottom-top");
+    for (let i = 0; i < y.length; i++) {
+        if (i < 4) y[i].src = box_bt_img;
+    }
 }
 
 window.onload = auto_Img()
@@ -27,4 +34,8 @@ function changeCard(a) {
     }
     var x = document.getElementsByTagName("img");
     Img_loop(x, link_image);
+    var y = document.getElementsByClassName("bottom-top");
+    for (let i = 0; i < y.length; i++) {
+        if (i < 4) y[i].src = box_bt_img;
+    }
 }
